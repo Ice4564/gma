@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V45 SMART PREDATOR | GET KEY</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0a0a0a;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            background: #111;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #00beff;
+            box-shadow: 0 0 30px rgba(0, 190, 255, 0.2);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #00beff;
+            margin-bottom: 10px;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .key-display {
+            margin: 30px 0;
+            padding: 20px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            border: 1px dashed #00beff;
+        }
+
+        #key-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 3px;
+        }
+
+        .copy-btn {
+            background: #00beff;
+            color: black;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .copy-btn:hover {
+            background: #008dba;
+            transform: scale(1.02);
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>💎 V45 LUXURY</h1>
+    <p>รหัสผ่านจะเปลี่ยนใหม่ทุกวัน (UTC Time)</p>
+
+    <div class="key-display">
+        <div id="key-text">กำลังโหลด...</div>
+    </div>
+
+    <button class="copy-btn" onclick="copyKey()">คัดลอกรหัสผ่าน</button>
+
+    <div class="footer">
+        © 2026 V45 SMART PREDATOR SYSTEM
+    </div>
+</div>
+
+<script>
+    function generateDailyKey() {
+        const now = new Date();
+        // ใช้เวลามาตรฐานสากล (UTC) เพื่อให้ตรงกับ os.date("!*t") ใน Roblox
+        const day = now.getUTCDate();
+        const month = now.getUTCMonth() + 1;
+        const year = now.getUTCFullYear();
+
+        // สูตรคำนวณ: V45- + (วัน * เดือน * ปี)
+        const formula = day * month * year;
+        return "V45-" + formula;
+    }
+
+    const currentKey = generateDailyKey();
+    document.getElementById('key-text').innerText = currentKey;
+
+    function copyKey() {
+        const el = document.createElement('textarea');
+        el.value = currentKey;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        alert('คัดลอกรหัสแล้ว: ' + currentKey);
+    }
+</script>
+
+</body>
+</html>

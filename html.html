@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>V45 GET KEY</title>
+    <style>
+        body { background: #0f0f0f; color: #00beff; font-family: 'Segoe UI', sans-serif; text-align: center; padding-top: 100px; }
+        .box { border: 2px solid #00beff; display: inline-block; padding: 30px; border-radius: 15px; background: #1a1a1a; box-shadow: 0 0 20px #00beff; }
+        h2 { letter-spacing: 5px; color: white; background: #00beff; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>💎 V45 DAILY KEY</h1>
+        <p>รหัสจะเปลี่ยนใหม่ทุกวันเวลา 00:00 น.</p>
+        <h2 id="key">กำลังคำนวณ...</h2>
+    </div>
+
+    <script>
+        // สูตรคำนวณรหัสสุ่มตามวันที่
+        const d = new Date();
+        const year = d.getFullYear();
+        const month = d.getMonth() + 1;
+        const day = d.getDate();
+
+        // สร้างรหัสสุ่มจากวันที่ เช่น V45-20261902
+        // สูตร: "V45-" + (ปี * วัน * เดือน)
+        const generatedKey = "V45-" + (year * day * month);
+        document.getElementById('key').innerText = generatedKey;
+    </script>
+</body>
+</html>
